@@ -1,0 +1,48 @@
+package CoolTrick;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class CoolProblem {
+
+	public static void main(String[] args) {
+
+		int first = 0;
+		int middle = 9;
+		int last = 0;
+		List<Integer> numbers = new ArrayList<>();
+
+		last = askUserInput();
+		checkUserInput(middle, last, numbers);
+
+	}
+
+	private static int askUserInput() {
+		int last;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("What's the last digit of your number?");
+		last = scan.nextInt();
+		return last;
+	}
+
+	private static void checkUserInput(int middle, int last, List<Integer> number) {
+		int first;
+		if (last <= 0 || last > 9) {
+			System.out.println("You can only enter a number between 1 and 9");
+		} else {
+			first = middle - last;
+
+			number.add(first);
+			number.add(middle);
+			number.add(last);
+
+			System.out.println("The number breakdown is: " + number);
+			System.out.print("The actual number is: ");
+		}
+		for (int entry : number) {
+			System.out.print(entry);
+		}
+	}
+
+}
