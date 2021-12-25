@@ -9,7 +9,7 @@ public class CoolProblem {
 	public static void main(String[] args) {
 
 		int first = 0;
-		int middle = 9;
+		final int middle = 9;
 		int last = 0;
 		List<Integer> numbers = new ArrayList<>();
 
