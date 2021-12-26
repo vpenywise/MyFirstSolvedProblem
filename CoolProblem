@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CoolProblem {
+public class Sashko {
 
 	public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class CoolProblem {
 
 	}
 
-	private static int askUserInput() {
+	public static int askUserInput() {
 		int last;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("What's the last digit of your number?");
@@ -25,7 +25,7 @@ public class CoolProblem {
 		return last;
 	}
 
-	private static void checkUserInput(int middle, int last, List<Integer> number) {
+	public static void checkUserInput(int middle, int last, List<Integer> number) {
 		int first;
 		if (last <= 0 || last > 9) {
 			System.out.println("You can only enter a number between 1 and 9");
@@ -38,9 +38,10 @@ public class CoolProblem {
 
 			System.out.println("The number breakdown is: " + number);
 			System.out.print("The actual number is: ");
-		}
-		for (int entry : number) {
-			System.out.print(entry);
+			for (int entry : number) {
+				System.out.print(entry);
+			}
+
 		}
 	}
 
