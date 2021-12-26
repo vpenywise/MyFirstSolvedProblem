@@ -22,6 +22,13 @@ public class DemoApplication {
         last = askUserInput();
         Integer integer = sashko.checkUserInput(middle, last, numbers);
         System.out.println(integer);
+
+        try {
+            Integer integer2 = sashko.checkUserInput2(middle, last);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());//Тук би трябвало да ти принтира съобщението което хвърляш като грешка в метода
+        }
+
     }
 
 
