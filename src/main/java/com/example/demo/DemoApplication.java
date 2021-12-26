@@ -1,12 +1,19 @@
-package cool.trick;
+package com.example.demo;
+
+import cool.trick.Sashko;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class MyDemo {
+@SpringBootApplication
+public class DemoApplication {
 
     public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+
         Sashko sashko = new Sashko();
         final int middle = 9;
         int last = 0;
@@ -15,8 +22,8 @@ public class MyDemo {
         last = askUserInput();
         Integer integer = sashko.checkUserInput(middle, last, numbers);
         System.out.println(integer);
-
     }
+
 
     public static int askUserInput() {
         int last;
