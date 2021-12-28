@@ -10,33 +10,21 @@ public class MyOtherClassTest {
 	@Test
 	public void testMyString() {
 		MyOtherClass myOtherClassTest = new MyOtherClass();
-		testMyString(myOtherClassTest, "WLA DO");
+		String expectedResult = "some random result";
+		String returnResult = myOtherClassTest.myTestString(expectedResult);
+		assertEquals(expectedResult, returnResult);
 	}
 	
 	@Test
 	public void testMySumTwoDigitsMethod() {
 		MyOtherClass myOtherClassTest = new MyOtherClass();
-		testMySumTwoDigitsMethod(myOtherClassTest);
-	}
-
-	@Test
-	public void testMySumTwoDigitsMethod_WrongResult() {
-		MyOtherClass myOtherClassTest = new MyOtherClass();
-		testMySumTwoDigitsMethod_WrongResult(myOtherClassTest);
-	}
-	
-	private void testMyString(MyOtherClass myOtherClassTest, String expectedResult) {
-		expectedResult = "";
-		String returnResult = myOtherClassTest.myTestString(expectedResult);
-		assertEquals(expectedResult, returnResult);
-	}
-	
-	private void testMySumTwoDigitsMethod(MyOtherClass myOtherClassTest) {
 		int actualResult = myOtherClassTest.sumTwoDigits(2, 3);
 		assertEquals(5, actualResult);
 	}
 	
-	private void testMySumTwoDigitsMethod_WrongResult(MyOtherClass myOtherClassTest) {
+	@Test
+	public void testMySumTwoDigitsMethod_WrongResult() {
+		MyOtherClass myOtherClassTest = new MyOtherClass();
 		int actualWrongResult = myOtherClassTest.sumTwoDigits(2, 3);
 		assertNotEquals(7, actualWrongResult);
 	}
